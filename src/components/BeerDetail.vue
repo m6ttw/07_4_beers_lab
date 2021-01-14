@@ -4,7 +4,7 @@
         <p>First Brewed: {{beer.first_brewed}}</p>
         <p>ABV: {{beer.abv}}</p>
         <!-- <input type="checkbox" v-model="favouriteChecked" v-if:"favouriteChecked" = true" id='favourite' name='favourite' value='Choose a favourite beer' > -->
-        <input type="button" v-on:click="emitFavouriteBeer" id='favourite' name='favourite' value='Add this beer to your list of favourite!' >
+        <input type="button" v-on:click="emitFavouriteBeer" id='favourite' name='favourite' value='Add or Remove this beer to your list of favourite!' >
         <!-- <label for='favourite'>Select this as a favourite beer </label> -->
     </div>
 </template>

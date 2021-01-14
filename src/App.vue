@@ -24,7 +24,8 @@ export default {
     return {
       beers: [],
       beer: null,
-      favouriteBeers: []
+      favouriteBeers: [],
+      indexOfBeer: null
     }
   },
   mounted(){
@@ -37,15 +38,20 @@ export default {
       // console.log('checking eventbus on', beer)
 
     eventBus.$on("favourite-beer-selected", (beer) => {
-      this.addFavouriteBeer()
+      if (!this.favouriteBeers.includes(this.beer))
+      {this.addFavouriteBeer()}
+      else
+      {this.removeFavouriteBeer()}
       console.log('addfavouritebeer in app.vue: ', this.beer)
      })
     })
   },
   methods: {
     addFavouriteBeer () {
-      if (!this.favouriteBeers.includes(this.beer))
-      {this.favouriteBeers.push(this.beer)}
+      {this.favouriteBeers.push(this.beer)};
+    },
+    removeFavouriteBeer () {
+      {this.indexOfBeer = this.favouriteBeers.indexOf(this.beer), this.favouriteBeers.splice(this.indexOfBeer)}
     }
   },
   components: {
@@ -59,6 +65,10 @@ export default {
 <style lang='css' scoped>
 #app {
 display: flex
+}
+
+ul {
+  list-style-type: none;
 }
 
 </style>
