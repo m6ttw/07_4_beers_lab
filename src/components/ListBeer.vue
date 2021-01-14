@@ -1,13 +1,19 @@
 <template>
   <div>
-  <li v-on:click= {{beer.name}}> </li>
+  <li v-on:click="handleClick">{{beer.name}} </li>
   </div>
 </template>
 
 <script>
 export default {
     name: "list-beer",
-    props: ["beer"]
+    props: ["beer"],
+    methods: {
+        handleClick() {
+            if (this.beer != null) 
+            {}
+        }
+    }
 }
 </script>
 

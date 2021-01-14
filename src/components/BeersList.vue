@@ -1,7 +1,7 @@
 <template>
 <div>
   <ul>
-      <li v-for='(beer, index) in beers' :beer='beer' :key=index></li>
+      <list-beer v-for='(beer, index) in beers' :beer='beer' :key=index></list-beer>
   </ul>    
 </div>
 </template>
